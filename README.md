@@ -2,6 +2,7 @@
 
 **Version:**
 
+- Java: 1.8.0_171
 - Spring Boot: 2.0.4
 - HBase: 1.2.6
 
@@ -63,6 +64,7 @@ Screenshot:
 ![mooc-courses-page-view-statistics-pie-chart.png](src/main/resources/static/img/mooc-courses-page-view-statistics-pie-chart.png)
 
 **Further improvement:**
+
     - Create a data connection pool for accessing data from HBase, which will improve the access speed.
     - Add a calendar widget on the front end page allowing you to access data for any date instead of hard code. Default date is today.
     - As it is for real-time statistics, the front end page should be refreshed automatically by adding a timer.
