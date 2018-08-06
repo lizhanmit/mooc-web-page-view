@@ -36,7 +36,7 @@ public class StatStreamingProjectApp {
     @ResponseBody
     public List<ClassTypeCourseClickCount> getClassTypeCourseClickCountList() throws IOException {
 
-        List<ClassTypeCourseClickCount> list = classTypeCourseClickCountDao.getClickCount("20180805"); // hard code here for simplicity
+        List<ClassTypeCourseClickCount> list = classTypeCourseClickCountDao.getClickCount("20180805"); // hard code here for simplicity, should be modified later
         for (ClassTypeCourseClickCount classTypeCourseClickCount : list) {
             classTypeCourseClickCount.setName(courses.get(classTypeCourseClickCount.getName().substring(9)));  // change day_courseId to course name
         }
