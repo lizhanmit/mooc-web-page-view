@@ -2,9 +2,11 @@
 
 **Version:**
 
+- Linux: Ubuntu 16.04
 - Java: 1.8.0_171
 - Spring Boot: 2.0.4
 - HBase: 1.2.6
+- IDE: Intellij IDEA 2018.1.4 (Community Edition)
 
 ---
 
@@ -41,23 +43,24 @@ This project is the user interface of [Spark Streaming Real Project](https://git
 6. Create ClassTypeCourseClickCount.java under "src/main/java/com/zhandev/domain" folder.
 7. Create ClassTypeCourseClickCountDao.java under "src/main/java/com/zhandev/dao" folder.
 8. Create StatStreamingProjectApp.java under "src/main/java/com/zhandev/project" folder.
-9. Add json dependency in pom.xml, as json format data needs to be sent to the front end.
-
-```
-<dependency>
-    <groupId>net.sf.json-lib</groupId>
-    <artifactId>json-lib</artifactId>
-    <version>2.4</version>
-    <classifier>jdk15</classifier>
-</dependency>
-```
-
-10. Create courses-page-view.html under "src/main/resources/templates" folder to display charts at front end.
+9. Create courses-page-view.html under "src/main/resources/templates" folder to display charts at front end.
     - **Note:** make sure there is a "/" in `<meta charset="UTF-8"/>` in `<head></head>`. Otherwise, there will be errors.
-11. Run MoocWebPageViewApplication.java. Visit <http://localhost:8080/moocwebpageview/courses-page-view>. You should see a pie chart of MOOC Real-Time Page View Statistics.
-12. Deploy to production environment.
+10. Run MoocWebPageViewApplication.java. Visit <http://localhost:8080/moocwebpageview/courses-page-view>. You should see a pie chart of MOOC Real-Time Page View Statistics.
+11. Deploy to production environment.
     1. In terminal, pack the Spring Boot project using maven. Under the Spring Boot project directory, `mvn clean package -DskipTests` (skip test). Then the .jar file will be created under "target" folder.
     2. Run the .jar file using `java -jar web-0.0.1.jar` under "target" folder. Then visit <http://localhost:8080/moocwebpageview/courses-page-view>. You should see the pie chart.
+
+A possible error:
+
+```
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+```
+
+Reason: You have already run the .jar file. Now you are trying to run the program in IDEA
+Solution: Kill the process that is using port 8080.
+
+1. In terminal, `jps`, find the process number of "jar".
+2. `kill -9 <process_number_of_jar>`.
 
 Screenshot:
 
