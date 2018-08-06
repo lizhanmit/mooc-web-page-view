@@ -50,17 +50,16 @@ This project is the user interface of [Spark Streaming Real Project](https://git
     1. In terminal, pack the Spring Boot project using maven. Under the Spring Boot project directory, `mvn clean package -DskipTests` (skip test). Then the .jar file will be created under "target" folder.
     2. Run the .jar file using `java -jar web-0.0.1.jar` under "target" folder. Then visit <http://localhost:8080/moocwebpageview/courses-page-view>. You should see the pie chart.
 
-A possible error:
+A potential error:
 
 ```
 The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
 ```
 
-Reason: You have already run the .jar file. Now you are trying to run the program in IDEA
-Solution: Kill the process that is using port 8080.
-
-1. In terminal, `jps`, find the process number of "jar".
-2. `kill -9 <process_number_of_jar>`.
+- Reason: You have already run the .jar file. Now you are trying to run the program in IDEA.
+- Solution: Kill the process that is using port 8080.
+    1. In terminal, `jps`, find the process number of "jar".
+    2. `kill -9 <process_number_of_jar>`.
 
 Screenshot:
 
